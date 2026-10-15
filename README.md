@@ -387,7 +387,7 @@ This project is licensed under the ISC License.
 
 <div align="center">
 
-Built with ❤️ by [Sujan Roy](https://github.com/sujan-roy24)
+Built with ❤️ by [Amit Tanwar](https://github.com/amittanwar5911)
 
 ⭐ Star this repo if you found it helpful!
 
