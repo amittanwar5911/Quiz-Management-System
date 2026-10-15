@@ -2,13 +2,15 @@
 
 # 🎯 Quiz Management System
 
-**A full-stack web application for creating, managing, and taking online quizzes and exams.**
+**A cloud-native, full-stack web platform for creating, managing, and taking online quizzes and exams — built with the modern MERN stack.**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20App-orange?style=for-the-badge)](https://quiz-management-system-2875.vercel.app)
-[![Backend](https://img.shields.io/badge/Backend-Render-46E3B7?style=for-the-badge)](https://quiz-management-system-ugcn.onrender.com)
-[![License](https://img.shields.io/badge/License-ISC-blue?style=for-the-badge)](#license)
-
-![Quiz Management System Banner](https://via.placeholder.com/900x300/0f0f0f/f5a623?text=Quiz+Management+System)
+[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Visit%20App-orange?style=for-the-badge)](https://quiz-management-system-2875.vercel.app)
+[![Backend API](https://img.shields.io/badge/⚡%20Backend-Render-46E3B7?style=for-the-badge)](https://quiz-management-system-ugcn.onrender.com)
+[![API Docs](https://img.shields.io/badge/📡%20API%20Docs-Swagger-85EA2D?style=for-the-badge)](https://quiz-management-system-ugcn.onrender.com/api-docs)
+[![License](https://img.shields.io/badge/License-ISC-blue?style=for-the-badge)](#-license)
+[![Node](https://img.shields.io/badge/Node.js-22.x-339933?style=for-the-badge&logo=node.js)](https://nodejs.org)
+[![React](https://img.shields.io/badge/React-19.x-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb)](https://mongodb.com/atlas)
 
 </div>
 
@@ -26,7 +28,6 @@
 - [Role System](#-role-system)
 - [CSV Upload Format](#-csv-upload-format)
 - [Deployment](#-deployment)
-- [Screenshots](#-screenshots)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -34,54 +35,62 @@
 
 ## 🌟 Overview
 
-Quiz Management System is a production-ready MERN stack application that enables institutions and individuals to create, manage, and participate in online examinations. It features a role-based access control system with four distinct user types, real-time exam timers, automatic scoring, and a comprehensive admin dashboard.
+**Quiz Management System** is a production-ready, cloud-deployed MERN stack application built for institutions and individuals who need a scalable platform to create, manage, and participate in online assessments.
+
+It ships with:
+- ⚡ **Role-Based Access Control (RBAC)** across 4 distinct user types
+- ⏱️ **Real-time exam timers** with auto-submit on expiry
+- 📊 **Automatic scoring & leaderboard rankings**
+- 🌙 **Dark / Light mode** with localStorage persistence
+- 📡 **Swagger-powered REST API** with full documentation
+- ☁️ **Deployed on Vercel + Render + MongoDB Atlas** — zero infrastructure management
 
 ---
 
 ## ✨ Features
 
 ### 🔐 Authentication & Security
-- JWT-based authentication with 7-day token expiry
-- Client-side token expiry validation
-- Auto-logout on session expiry (401 detection)
-- Role-based route protection
-- Password hashing with bcryptjs
+- Stateless **JWT authentication** with 7-day token lifecycle
+- Client-side token expiry validation — no wasted API calls
+- Auto-logout with intercepted `401` responses
+- **bcryptjs** password hashing — no plain-text secrets stored
+- Protected routes with role-aware middleware
 
 ### 👑 Super Admin
-- Full system dashboard with live statistics
-- User management — create, update roles, delete users
-- Quiz bank management with CSV bulk upload
-- Oversight of all exams and attempts
+- System-wide dashboard with live platform statistics
+- Full user lifecycle management — create, promote roles, delete
+- Quiz bank oversight with **CSV bulk upload** support
+- Global visibility into all exams and attempt records
 
 ### 🛡️ Admin
-- Quiz bank CRUD operations
-- Bulk import quizzes via CSV template
-- Filter quizzes by subject, topic, and difficulty level
-- Pagination and keyword search
+- Full **CRUD** on the quiz bank
+- Bulk-import questions via downloadable CSV template
+- Advanced filtering by subject, topic, and difficulty level
+- Paginated search across the entire question pool
 
 ### 📝 Setter (Exam Creator)
-- Create exams with **manual** or **dynamic** question selection
-- Dynamic selection: multi-subject picker, topic filter, difficulty level, live match count preview
-- Schedule exam start time with future-only validation
-- Manage participants via searchable checkbox dropdown
-- View ranked results leaderboard
-- Edit upcoming exams (completed exams are locked)
+- Create exams with **Manual** or **Dynamic** question selection
+- Dynamic mode: multi-subject picker, topic filter, difficulty level, and live match count preview
+- Future-only exam scheduling with datetime validation
+- Manage participants through a searchable checkbox dropdown
+- Real-time **ranked results leaderboard**
+- Edit upcoming exams — completed exams are immutably locked
 
 ### 🎓 Participant
-- View and take available exams with live countdown timer
-- Auto-submit when time expires
-- Progress bar tracking answered questions
-- Create self-practice exams (Basic level, dynamic selection)
-- Invite friends to self-exams via participant picker
-- View attempt history with scores
-- Result screen with percentage, color-coded feedback, and score bar
+- Browse and attempt live exams with a **live countdown timer**
+- Auto-submit triggered on time expiry — no data loss
+- Visual **progress bar** tracking answered vs. remaining questions
+- Create **self-practice sessions** (Basic level, dynamic selection)
+- Invite peers to self-exams via the participant picker
+- Attempt history with detailed score breakdowns
+- Result screen with **percentage score**, color-coded performance feedback, and animated score bar
 
 ### 🎨 UI/UX
-- Dark / Light mode toggle (persisted in localStorage)
-- Responsive design — mobile, tablet, desktop
-- Toast notifications (auto-dismiss + manual close)
-- Loading spinners and empty states throughout
-- 404 Not Found page
+- 🌙 **Dark / Light mode** toggle — state persisted in `localStorage`
+- 📱 Fully **responsive layout** — mobile, tablet, and desktop
+- 🔔 **Toast notification system** — auto-dismiss + manual close
+- ⏳ Smooth loading spinners and graceful empty states
+- 🚫 Custom **404 Not Found** page
 
 ---
 
@@ -90,32 +99,32 @@ Quiz Management System is a production-ready MERN stack application that enables
 ### Frontend
 | Technology | Version | Purpose |
 |---|---|---|
-| React | 19.x | UI framework |
-| React Router DOM | 7.x | Client-side routing |
-| CSS Variables | — | Theming (dark/light mode) |
-| Fetch API | — | HTTP requests |
+| **React** | 19.x | UI component framework |
+| **React Router DOM** | 7.x | Client-side SPA routing |
+| **CSS Custom Properties** | — | Themeable design system (dark/light) |
+| **Fetch API** | — | Native HTTP client — no extra dependencies |
 
 ### Backend
 | Technology | Version | Purpose |
 |---|---|---|
-| Node.js | 22.x | Runtime |
-| Express | 5.x | Web framework |
-| MongoDB | — | Database |
-| Mongoose | 9.x | ODM |
-| JWT | 9.x | Authentication |
-| bcryptjs | 3.x | Password hashing |
-| csv-parse | 6.x | CSV bulk import |
-| helmet | 8.x | Security headers |
-| morgan | 1.x | HTTP logging |
-| swagger-ui-express | 5.x | API documentation |
+| **Node.js** | 22.x | Server-side JavaScript runtime |
+| **Express** | 5.x | Minimal, fast REST API framework |
+| **MongoDB** | — | NoSQL document database |
+| **Mongoose** | 9.x | Schema-based MongoDB ODM |
+| **JSON Web Token (JWT)** | 9.x | Stateless authentication |
+| **bcryptjs** | 3.x | Secure password hashing |
+| **csv-parse** | 6.x | CSV bulk import engine |
+| **helmet** | 8.x | HTTP security headers middleware |
+| **morgan** | 1.x | HTTP request logging |
+| **swagger-ui-express** | 5.x | Auto-generated interactive API docs |
 
-### Infrastructure
+### Infrastructure & DevOps
 | Service | Purpose |
 |---|---|
-| MongoDB Atlas | Cloud database (free tier) |
-| Render | Backend hosting (free tier) |
-| Vercel | Frontend hosting (free tier) |
-| GitHub | Source control & CI/CD |
+| **MongoDB Atlas** | Managed cloud database (M0 free tier) |
+| **Render** | Backend container hosting with auto-deploy |
+| **Vercel** | Frontend CDN hosting with edge deployment |
+| **GitHub** | Source control + CI/CD pipeline trigger |
 
 ---
 
@@ -123,49 +132,47 @@ Quiz Management System is a production-ready MERN stack application that enables
 
 ```
 Quiz-Management-System/
-├── frontend/                  # React application
+├── frontend/                  # React 19 SPA
 │   ├── public/
-│   ├── src/
-│   │   ├── api/               # Centralized API layer
-│   │   │   └── index.js
-│   │   ├── components/        # Reusable UI components
-│   │   │   └── index.js       # Navbar, Modal, Spinner, ParticipantPicker...
-│   │   ├── context/           # React context providers
-│   │   │   ├── AuthContext.jsx
-│   │   │   ├── ThemeContext.jsx
-│   │   │   └── ToastContext.jsx
-│   │   ├── hooks/
-│   │   │   └── useFetch.js    # Data fetching hook
-│   │   ├── pages/
-│   │   │   ├── admin/         # Dashboard, Overview, Users, Quizzes
-│   │   │   ├── setter/        # Exams, CreateExam, ExamResults
-│   │   │   ├── participant/   # AvailableExams, TakeExam, SelfExam...
-│   │   │   ├── Login.jsx
-│   │   │   └── Register.jsx
-│   │   └── styles/
-│   │       └── global.css     # Design system + dark/light themes
-│   ├── vercel.json
-│   └── package.json
+│   └── src/
+│       ├── api/               # Centralized API layer (single source of truth)
+│       │   └── index.js
+│       ├── components/        # Reusable UI components
+│       │   └── index.js       # Navbar, Modal, Spinner, ParticipantPicker...
+│       ├── context/           # React Context providers (global state)
+│       │   ├── AuthContext.jsx
+│       │   ├── ThemeContext.jsx
+│       │   └── ToastContext.jsx
+│       ├── hooks/
+│       │   └── useFetch.js    # Custom data-fetching hook
+│       ├── pages/
+│       │   ├── admin/         # Dashboard, Overview, Users, Quizzes
+│       │   ├── setter/        # Exams, CreateExam, ExamResults
+│       │   ├── participant/   # AvailableExams, TakeExam, SelfExam...
+│       │   ├── Login.jsx
+│       │   └── Register.jsx
+│       └── styles/
+│           └── global.css     # Design tokens + dark/light theme system
 │
-└── backend/                   # Express API server
+└── backend/                   # Express 5 REST API
     ├── src/
-    │   ├── config/            # DB connection, Swagger setup
-    │   ├── controllers/       # Route handlers
+    │   ├── config/            # DB connection, Swagger config
+    │   ├── controllers/       # Request handlers (thin layer)
     │   │   ├── adminController.js
     │   │   ├── authController.js
     │   │   ├── examController.js
     │   │   ├── quizController.js
     │   │   └── attemptController.js
-    │   ├── middleware/        # Auth, role, error middleware
-    │   ├── models/            # Mongoose schemas
+    │   ├── middleware/        # Auth guard, role guard, global error handler
+    │   ├── models/            # Mongoose schemas & models
     │   │   ├── User.js
     │   │   ├── Exam.js
     │   │   ├── Quiz.js
     │   │   └── Attempt.js
     │   ├── routes/            # Express routers
-    │   ├── services/          # Business logic layer
-    │   ├── utils/             # JWT, password, random selector helpers
-    │   └── seed.js            # Database seeder
+    │   ├── services/          # Business logic layer (separated from controllers)
+    │   ├── utils/             # JWT helpers, password utils, random selector
+    │   └── seed.js            # Database seeder with demo data
     ├── swagger.yaml
     └── package.json
 ```
@@ -175,14 +182,14 @@ Quiz-Management-System/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- MongoDB (local or Atlas)
-- Git
+- **Node.js** `v18+` — [Download](https://nodejs.org)
+- **MongoDB** (local instance or [Atlas](https://mongodb.com/atlas) cloud)
+- **Git**
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/sujan-roy24/Quiz-Management-System.git
+git clone https://github.com/amittanwar5911/Quiz-Management-System.git
 cd Quiz-Management-System
 ```
 
@@ -193,7 +200,8 @@ cd backend
 npm install
 ```
 
-Create `.env` in the `backend` folder:
+Create a `.env` file in the `backend/` directory:
+
 ```env
 PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/quizMsDb
@@ -201,18 +209,22 @@ JWT_SECRET=your_super_secret_jwt_key_change_in_production
 JWT_EXPIRES_IN=7d
 ```
 
-Seed the database:
+Seed the database with demo users and quiz data:
+
 ```bash
 npm run seed
 ```
 
-Start the backend:
+Start the development server:
+
 ```bash
 npm run dev
 ```
 
-Backend runs at: `http://localhost:5000`
-API Docs at: `http://localhost:5000/api-docs`
+| Service | URL |
+|---|---|
+| Backend API | `http://localhost:5000` |
+| Swagger Docs | `http://localhost:5000/api-docs` |
 
 ### 3. Setup Frontend
 
@@ -221,17 +233,19 @@ cd ../frontend
 npm install
 ```
 
-Create `.env` in the `frontend` folder:
+Create a `.env` file in the `frontend/` directory:
+
 ```env
 REACT_APP_API_URL=http://localhost:5000/api
 ```
 
-Start the frontend:
+Start the dev server:
+
 ```bash
 npm start
 ```
 
-Frontend runs at: `http://localhost:3000`
+App runs at: `http://localhost:3000`
 
 ---
 
@@ -243,7 +257,7 @@ Frontend runs at: `http://localhost:3000`
 |---|---|---|
 | `PORT` | Server port | `5000` |
 | `MONGO_URI` | MongoDB connection string | `mongodb://localhost/quizMsDb` |
-| `JWT_SECRET` | Secret key for JWT signing | `your_secret_key` |
+| `JWT_SECRET` | Secret key for signing JWTs | `your_secret_key` |
 | `JWT_EXPIRES_IN` | Token expiry duration | `7d` |
 
 ### Frontend (`frontend/.env`)
@@ -256,46 +270,46 @@ Frontend runs at: `http://localhost:3000`
 
 ## 📡 API Documentation
 
-Full Swagger documentation available at `/api-docs` when running the backend.
+Interactive Swagger documentation is available at `/api-docs` when running the backend locally, or at the [live API docs](https://quiz-management-system-ugcn.onrender.com/api-docs).
 
 ### Key Endpoints
 
-| Method | Endpoint | Role | Description |
+| Method | Endpoint | Access | Description |
 |---|---|---|---|
-| POST | `/auth/register` | Public | Register new user |
-| POST | `/auth/login` | Public | Login and get JWT |
-| GET | `/admin/stats` | Admin+ | Dashboard statistics |
-| GET | `/admin/users` | Admin+ | List all users |
-| POST | `/admin/users` | Admin+ | Create user manually |
-| PUT | `/admin/users/:id/role` | Admin+ | Change user role |
-| DELETE | `/admin/users/:id` | Superadmin | Delete user |
-| POST | `/admin/quizzes/upload` | Admin+ | Bulk CSV upload |
-| GET | `/quizzes` | Admin+/Setter | List quizzes with filters |
-| POST | `/quizzes` | Admin+ | Create quiz |
-| GET | `/exams/mine` | Setter | Setter's own exams |
-| POST | `/exams` | Setter | Create exam |
-| PUT | `/exams/:id` | Setter | Update exam |
-| GET | `/exams/available` | Participant | Active exams |
-| GET | `/exams/upcoming` | Participant | Scheduled exams |
-| GET | `/exams/:id/questions` | Participant | Exam questions |
-| POST | `/attempts/submit` | Participant | Submit answers |
-| GET | `/attempts/my` | Participant | Own attempt history |
+| `POST` | `/auth/register` | Public | Register a new user |
+| `POST` | `/auth/login` | Public | Authenticate and receive JWT |
+| `GET` | `/admin/stats` | Admin+ | Platform-wide statistics |
+| `GET` | `/admin/users` | Admin+ | Paginated user list |
+| `POST` | `/admin/users` | Admin+ | Create user manually |
+| `PUT` | `/admin/users/:id/role` | Admin+ | Promote / demote user role |
+| `DELETE` | `/admin/users/:id` | Superadmin | Permanently delete user |
+| `POST` | `/admin/quizzes/upload` | Admin+ | Bulk CSV question import |
+| `GET` | `/quizzes` | Admin+/Setter | Filtered, paginated quiz list |
+| `POST` | `/quizzes` | Admin+ | Create a new quiz question |
+| `GET` | `/exams/mine` | Setter | Setter's own exams |
+| `POST` | `/exams` | Setter | Create a new exam |
+| `PUT` | `/exams/:id` | Setter | Edit an upcoming exam |
+| `GET` | `/exams/available` | Participant | Active exams available to take |
+| `GET` | `/exams/upcoming` | Participant | Scheduled upcoming exams |
+| `GET` | `/exams/:id/questions` | Participant | Fetch exam questions |
+| `POST` | `/attempts/submit` | Participant | Submit exam answers |
+| `GET` | `/attempts/my` | Participant | Personal attempt history |
 
 ---
 
 ## 👤 Role System
 
 ```
-superadmin  ──▶  Full system control
+superadmin  ──▶  Full platform control — users, quizzes, exams, system stats
     │
-admin       ──▶  Quiz bank + user management (no admin creation)
+admin       ──▶  Quiz bank management + user management (cannot create admins)
     │
-setter      ──▶  Exam creation + participant management
+setter      ──▶  Exam creation, scheduling & participant management
     │
-participant ──▶  Take exams + self-practice
+participant ──▶  Take assigned exams + create self-practice sessions
 ```
 
-### Default Seed Credentials
+### Demo Credentials (Seeded)
 
 | Role | Email | Password |
 |---|---|---|
@@ -305,15 +319,15 @@ participant ──▶  Take exams + self-practice
 | Participant | alice@quiz.io | alice123 |
 | Participant | bob@quiz.io | bob123 |
 
-> ⚠️ **Change all passwords in production!**
+> ⚠️ **Security Notice:** Rotate all default credentials before deploying to production!
 
 ---
 
 ## 📄 CSV Upload Format
 
-Admins can bulk upload quizzes using a CSV file. Download the template from the Quiz Bank tab.
+Admins can bulk-import quiz questions using a structured CSV file. Download the template directly from the **Quiz Bank** tab in the admin dashboard.
 
-### Column Format
+### Column Schema
 
 ```csv
 subject,topic,question,option1,option2,option3,option4,correct,label
@@ -321,67 +335,63 @@ Math,Algebra,What is 2+2?,1,2,3,4,4,basic
 Science,Physics,What is the unit of force?,Joule,Newton,Watt,Pascal,Newton,intermediate
 ```
 
-### Rules
-- `label` must be one of: `basic`, `intermediate`, `advanced`
-- `correct` must exactly match one of the option values
+### Validation Rules
+- `label` must be one of: `basic` · `intermediate` · `advanced`
+- `correct` must exactly match one of the four option values
 - `option1` and `option2` are required; `option3` and `option4` are optional
-- All other fields are required
+- All other columns are required — rows with missing fields are rejected
 
 ---
 
 ## 🌐 Deployment
 
-### Backend → Render (Free)
+### Backend → Render
 
-1. Push to GitHub
-2. Create new Web Service on [render.com](https://render.com)
-3. Set Root Directory: `backend`
-4. Build Command: `npm install`
-5. Start Command: `node server.js`
-6. Add environment variables in Render dashboard
+1. Push your code to GitHub
+2. Create a new **Web Service** on [render.com](https://render.com)
+3. Set **Root Directory** to `backend`
+4. Set **Build Command** to `npm install`
+5. Set **Start Command** to `node server.js`
+6. Add all environment variables in the Render dashboard
+7. Render auto-deploys on every push to `main` ✅
 
-### Frontend → Vercel (Free)
+### Frontend → Vercel
 
-1. Import GitHub repo on [vercel.com](https://vercel.com)
-2. Set Root Directory: `frontend`
-3. Add environment variable: `REACT_APP_API_URL`
-4. Deploy
+1. Import your GitHub repo at [vercel.com](https://vercel.com)
+2. Set **Root Directory** to `frontend`
+3. Add environment variable: `REACT_APP_API_URL` → your Render backend URL
+4. Click **Deploy** — Vercel handles the rest with global edge CDN ✅
 
-### Database → MongoDB Atlas (Free)
+### Database → MongoDB Atlas
 
-1. Create free M0 cluster at [mongodb.com/atlas](https://mongodb.com/atlas)
-2. Allow network access from `0.0.0.0/0`
-3. Copy connection string to `MONGO_URI`
-
----
-
-## 📸 Screenshots
-
-> Screenshots coming soon — visit the [live demo](https://quiz-management-system-2875.vercel.app) to see the app in action.
+1. Create a free **M0 Flex** cluster at [mongodb.com/atlas](https://mongodb.com/atlas)
+2. Whitelist `0.0.0.0/0` under **Network Access** (or use Render's static IPs)
+3. Create a database user and copy the connection string to `MONGO_URI`
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome! Here's how to get started:
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a Pull Request
+1. **Fork** the repository
+2. **Create** a feature branch: `git checkout -b feature/your-feature-name`
+3. **Commit** your changes with a descriptive message: `git commit -m 'feat: add your feature'`
+4. **Push** to your branch: `git push origin feature/your-feature-name`
+5. **Open a Pull Request** — describe what you changed and why
 
-### Code Style
-- Keep functions small and focused
-- Use meaningful variable names
-- Add comments for complex logic
-- Follow existing patterns in the codebase
+### Code Guidelines
+- Keep functions small, single-responsibility, and well-named
+- Use meaningful variable and function names — code should read like prose
+- Add inline comments for non-obvious logic
+- Follow the existing folder structure and naming conventions
+- Write commit messages using [Conventional Commits](https://www.conventionalcommits.org/) format (`feat:`, `fix:`, `chore:`, etc.)
 
 ---
 
 ## 📝 License
 
-This project is licensed under the ISC License.
+This project is licensed under the **ISC License** — free to use, modify, and distribute.
 
 ---
 
@@ -389,6 +399,6 @@ This project is licensed under the ISC License.
 
 Built with ❤️ by [Amit Tanwar](https://github.com/amittanwar5911)
 
-⭐ Star this repo if you found it helpful!
+⭐ **Star this repo** if you found it helpful — it really means a lot!
 
 </div>
